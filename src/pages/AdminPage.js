@@ -7,7 +7,7 @@ const AdminPage = () => {
   return (
     <Routes>
       <Route
-        path="*"
+        path="/"
         element={
           permission ? <h3>Panel admina</h3> : <Navigate replace to="/login" />
         }

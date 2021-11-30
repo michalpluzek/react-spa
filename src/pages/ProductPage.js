@@ -3,7 +3,7 @@ import { NavLink, useParams } from "react-router-dom";
 import Product from "../components/Product";
 
 const ProductPage = () => {
-  const params = useParams();
+  let params = useParams();
 
   return (
     <>

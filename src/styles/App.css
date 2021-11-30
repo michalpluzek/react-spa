@@ -29,4 +29,7 @@ footer {
   padding: 10px 0;
   text-align: center;
   text-transform: uppercase;
+  color: #fff;
+  background-color: #000;
+  margin-bottom: 50px;
 }
