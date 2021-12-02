@@ -1,40 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/ContactPage.css";
 
-class ContactPage extends React.Component {
-  state = {
-    value: "",
+const ContactPage = () => {
+  const [value, setValue] = useState("");
+
+  const handleChange = (e) => {
+    setValue(e.target.value);
   };
 
-  handleChange = (e) => {
-    this.setState({
-      value: e.target.value,
-    });
-  };
-
-  handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    this.setState({
-      value: "",
-    });
+    setValue(e.target.value);
   };
 
-  render() {
-    return (
-      <div className="contact">
-        <form onSubmit={this.handleSubmit}>
-          <h3>Napisz do nas</h3>
-          <textarea
-            value={this.state.value}
-            onChange={this.handleChange}
-            placeholder="Wpisz wiadomość..."
-          ></textarea>
-          <button>Wyślij</button>
-        </form>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="contact">
+      <form onSubmit={handleSubmit}>
+        <h3>Napisz do nas</h3>
+        <textarea
+          value={value}
+          onChange={handleChange}
+          placeholder="Wpisz wiadomość..."
+        ></textarea>
+        <button>Wyślij</button>
+      </form>
+    </div>
+  );
+};
 
 export default ContactPage;
